@@ -9,7 +9,7 @@ typedef struct Node {
     struct Node *left, *right;
 } Node;
 
-// FunÁ„o para criar um novo nÛ
+// Fun√ß√£o para criar um novo n√≥
 Node* novoNode(int RGM, char *nome) {
     Node* temp = (Node*)malloc(sizeof(Node));
     temp->RGM = RGM;
@@ -18,7 +18,7 @@ Node* novoNode(int RGM, char *nome) {
     return temp;
 }
 
-// FunÁ„o para inserir um novo nÛ na ·rvore
+// Fun√ß√£o para inserir um novo n√≥ na √°rvore
 Node* inserir(Node* node, int RGM, char *nome) {
     if (node == NULL) return novoNode(RGM, nome);
     if (RGM < node->RGM)
@@ -28,7 +28,7 @@ Node* inserir(Node* node, int RGM, char *nome) {
     return node;
 }
 
-// FunÁ„o para encontrar o nÛ de menor valor (usado na remoÁ„o de nÛs)
+// Fun√ß√£o para encontrar o n√≥ de menor valor (usado na remo√ß√£o de n√≥s)
 Node* minValueNode(Node* node) {
     Node* current = node;
     while (current && current->left != NULL)
@@ -36,7 +36,7 @@ Node* minValueNode(Node* node) {
     return current;
 }
 
-// Deleta um nÛ da ·rvore
+// Deleta um n√≥ da √°rvore
 Node* deletar(Node* raiz, int RGM) {
     if (raiz == NULL) return raiz;
     if (RGM < raiz->RGM) {
@@ -61,7 +61,7 @@ Node* deletar(Node* raiz, int RGM) {
     return raiz;
 }
 
-// FunÁ„o para pesquisar um nÛ na ·rvore
+// Fun√ß√£o para pesquisar um n√≥ na √°rvore
 Node* pesquisar(Node* raiz, int RGM) {
     if (raiz == NULL || raiz->RGM == RGM)
         return raiz;
@@ -70,7 +70,7 @@ Node* pesquisar(Node* raiz, int RGM) {
     return pesquisar(raiz->left, RGM);
 }
 
-// FunÁıes para percorrer a ·rvore
+// Fun√ß√µes para percorrer a √°rvore
 void preOrder(Node* raiz) {
     if (raiz != NULL) {
         printf("%d %s\n", raiz->RGM, raiz->nome);
@@ -95,7 +95,7 @@ void postOrder(Node* raiz) {
     }
 }
 
-// FunÁ„o para ler dados do arquivo e criar a ·rvore
+// Fun√ß√£o para ler dados do arquivo e criar a √°rvore
 Node* loadTreeFromFile(char *filename) {
     FILE *file = fopen(filename, "r");
     if (file == NULL) {
@@ -113,7 +113,7 @@ Node* loadTreeFromFile(char *filename) {
     return raiz;
 }
 
-// FunÁ„o principal
+// Fun√ß√£o principal
 int main() {
     Node *raiz = NULL;
     int opcao, RGM;
@@ -156,7 +156,7 @@ int main() {
                 if (result != NULL) {
                     printf("Aluno encontrado: %d %s\n", result->RGM, result->nome);
                 } else {
-                    printf("Aluno n„o encontrado.\n");
+                    printf("Aluno n√£o encontrado.\n");
                 }
                 break;
             case 4:
